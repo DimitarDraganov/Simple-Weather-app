@@ -28,7 +28,7 @@ public class Netconect {
 
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
-            connection.setDoInput(true);
+            connection.setDoOutput(true);
             connection.connect();
 
 

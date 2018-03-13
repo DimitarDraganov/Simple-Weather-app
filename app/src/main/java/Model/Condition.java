@@ -9,7 +9,6 @@ public class Condition {
     private int weatherId;
     private String condition;
     private String description;
-    private String icon;
     private float pressure;
     private float humidity;
     private float maxT;
@@ -39,15 +38,7 @@ public class Condition {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
+    
     public float getPressure() {
         return pressure;
     }

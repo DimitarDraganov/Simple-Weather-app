@@ -5,6 +5,7 @@ package Model;
  */
 
 public class Place {
+    private long lastupdate;
     private long sunset;
     private long sunrise;
     private String country;
@@ -13,11 +14,11 @@ public class Place {
 
 
 
+    public long getLastupdate() { return lastupdate; }
 
+    public void setLastupdate(long lastupdate) { this.lastupdate = lastupdate; }
 
-    public long getSunset() {
-        return sunset;
-    }
+    public long getSunset() { return sunset; }
 
     public void setSunset(long suntset) {
         this.sunset = suntset;

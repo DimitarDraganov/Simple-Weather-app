@@ -1,12 +1,14 @@
 package com.example.pc.weatherapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,19 +21,22 @@ import Data.JSONp;
 import Data.Netconect;
 import Model.Weather;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private TextView temp;
     private TextView description;
     private TextView humidity;
     private TextView pressure;
-    private TextView cityName;
+    public TextView cityName;
     private TextView sunset;
     private TextView sunrise;
     private TextView wind;
     private TextView cloud;
+    private Button btnR;
+    private Button btnGO;
 
+    public String kek;
 
     Weather weather = new Weather();
 
@@ -51,14 +56,36 @@ public class MainActivity extends AppCompatActivity {
         sunrise = (TextView) findViewById(R.id.Srise);
         sunset = (TextView) findViewById(R.id.Sset);
 
+        btnR = (Button) findViewById(R.id.btnR);
+        btnR.setOnClickListener(MainActivity.this);
+
+        btnGO = (Button) findViewById(R.id.btnGO);
+        btnGO.setOnClickListener(MainActivity.this);
+
         readWheaterData("edinburgh,uk");
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnR:
+                recreate();
+                break;
+
+            case R.id.btnGO:
+                Intent activity2 = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(activity2);
+                break;
+        }
+    }
+
 
     public void readWheaterData( String city ) {
 
         WeaterTask weaterTask = new WeaterTask();
         weaterTask.execute(new String[]{city + "&APPID=" + "3c8a435aa6d40a43683d8ae3e10ade7b"});
     }
+
 
     private class WeaterTask extends AsyncTask<String, Void, Weather> {
         @Override
@@ -78,8 +105,9 @@ public class MainActivity extends AppCompatActivity {
 
             DecimalFormat decimalFormat = new DecimalFormat("##.##");
 
-            String temperatureTX = decimalFormat.format(weather.condition.getTemperature());
+            String temperatureTX = decimalFormat.format(weather.condition.getTemperature()/100);
 
+             kek = temperatureTX;
 
             cityName.setText(weather.place.getCity() + "," + weather.place.getCountry());
 
@@ -96,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
             sunset.setText("Sunset: " + st + " pm");
 
-            cloud.setText("Cloud: " + weather.condition.getCondition());
+            cloud.setText("Sky: " + weather.condition.getCondition());
 
             description.setText(weather.condition.getDescription());
 
@@ -113,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
 
             return weather;
         }
+
+
+
+
     }
 
 }

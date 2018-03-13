@@ -37,6 +37,7 @@ public class JSONp {
             place.setCountry(Utilities.getString("country", sysOBj));
             place.setSunrise(Utilities.getInt("sunrise", sysOBj));
             place.setSunset(Utilities.getInt("sunset", sysOBj));
+            place.setLastupdate(Utilities.getInt("dt", jsonObject));
 
             weather.place = place;
 
@@ -45,7 +46,6 @@ public class JSONp {
             weather.condition.setWeatherId(Utilities.getInt("id", jsonWeather));
             weather.condition.setDescription(Utilities.getString("description", jsonWeather));
             weather.condition.setCondition(Utilities.getString("main", jsonWeather));
-            weather.condition.setIcon(Utilities.getString("icon", jsonWeather));
 
             JSONObject mainOBj = Utilities.getObject("main", jsonObject);
             weather.condition.setHumidity(Utilities.getInt("humidity", mainOBj));
