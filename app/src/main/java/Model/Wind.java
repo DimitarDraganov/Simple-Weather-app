@@ -12,6 +12,7 @@ public class Wind {
         return speed;
     }
 
+    //We create getters and setters
     public void setSpeed(float speed) {
         this.speed = speed;
     }

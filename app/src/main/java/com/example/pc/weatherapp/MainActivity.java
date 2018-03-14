@@ -7,11 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -36,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnR;
     private Button btnGO;
 
-    public String kek;
 
     Weather weather = new Weather();
 
@@ -93,7 +90,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             super.onPostExecute(weather);
 
-
             DateFormat dataFormat = DateFormat.getTimeInstance();
 
             String sunriseTX = dataFormat.format(new Date(weather.place.getSunrise()));
@@ -107,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             String temperatureTX = decimalFormat.format(weather.condition.getTemperature()/100);
 
-             kek = temperatureTX;
 
             cityName.setText(weather.place.getCity() + "," + weather.place.getCountry());
 

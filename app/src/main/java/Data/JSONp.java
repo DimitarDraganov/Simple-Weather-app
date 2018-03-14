@@ -37,7 +37,6 @@ public class JSONp {
             place.setCountry(Utilities.getString("country", sysOBj));
             place.setSunrise(Utilities.getInt("sunrise", sysOBj));
             place.setSunset(Utilities.getInt("sunset", sysOBj));
-            place.setLastupdate(Utilities.getInt("dt", jsonObject));
 
             weather.place = place;
 

@@ -21,11 +21,8 @@ public class Netconect {
 
         try {
 
-            //fix this
-            connection = (HttpURLConnection) (new URL(Utilities.BASE_URL + place + "&APPID=" + "3c8a435aa6d40a43683d8ae3e10ade7b")).openConnection();
-
-
-
+            //Suround out internet URL connection with a try catch
+            connection = (HttpURLConnection) (new URL(Utilities.BASE_URL + place + "&APPID=" + Utilities.OPEN_API)).openConnection();
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
             connection.setDoOutput(true);

@@ -7,6 +7,8 @@ package Model;
 public class Clouds {
     private int precipitation;
 
+
+    //We create getters and setters
     public int getPrecipitation() {
         return precipitation;
     }

@@ -8,6 +8,7 @@ public class Temperature {
 
     private double temp;
 
+    //We create getters and setters
     public double getTemp() {
         return temp;
     }

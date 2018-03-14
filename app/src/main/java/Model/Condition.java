@@ -11,10 +11,10 @@ public class Condition {
     private String description;
     private float pressure;
     private float humidity;
-    private float maxT;
-    private float minT;
     private double temperature;
 
+
+    //We create getters and setters
     public int getWeatherId() {
         return weatherId;
     }
@@ -53,22 +53,6 @@ public class Condition {
 
     public void setHumidity(float humidity) {
         this.humidity = humidity;
-    }
-
-    public float getMaxT() {
-        return maxT;
-    }
-
-    public void setMaxT(float maxT) {
-        this.maxT = maxT;
-    }
-
-    public float getMinT() {
-        return minT;
-    }
-
-    public void setMinT(float minT) {
-        this.minT = minT;
     }
 
     public double getTemperature() {

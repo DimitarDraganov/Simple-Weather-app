@@ -5,6 +5,9 @@ package Model;
  */
 
 public class Weather {
+    //This class uses all other classes
+
+    //We create instance variables of other classes
 
     public Place place;
     public Condition condition = new Condition();

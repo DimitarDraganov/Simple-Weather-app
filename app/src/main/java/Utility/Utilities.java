@@ -9,17 +9,12 @@ import org.json.JSONObject;
 
 public class Utilities {
 
- //   public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weater?q=";
-
-
-
     public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
 
     public static final String OPEN_API = "3c8a435aa6d40a43683d8ae3e10ade7b";
 
 
- //   "http://api.openweathermap.org/data/2.5/weather?q=edinburgh,uk&appid=3c8a435aa6d40a43683d8ae3e10ade7b"
-
+    //Throws exeption if soemthing goes wrong with the internet connection
     public static JSONObject getObject(String tagName, JSONObject jsonObject) throws JSONException {
         JSONObject jObj = jsonObject.getJSONObject(tagName);
         return jObj;
