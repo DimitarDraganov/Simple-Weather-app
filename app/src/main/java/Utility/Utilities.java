@@ -9,6 +9,8 @@ import org.json.JSONObject;
 
 public class Utilities {
 
+
+    //The database we fetch the  data from and the API key we use
     public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
 
     public static final String OPEN_API = "3c8a435aa6d40a43683d8ae3e10ade7b";
