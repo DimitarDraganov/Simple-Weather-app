@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 public class Main2Activity extends AppCompatActivity  {
 
+    //Second activity: About page
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

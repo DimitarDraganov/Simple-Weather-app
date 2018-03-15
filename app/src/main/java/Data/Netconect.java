@@ -21,7 +21,7 @@ public class Netconect {
 
         try {
 
-            //Suround out internet URL connection with a try catch
+            //Surround our internet URL connection with a try catch
             connection = (HttpURLConnection) (new URL(Utilities.BASE_URL + place + "&APPID=" + Utilities.OPEN_API)).openConnection();
             connection.setRequestMethod("GET");
             connection.setDoInput(true);

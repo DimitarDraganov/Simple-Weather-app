@@ -18,6 +18,8 @@ public class JSONp {
 
         Weather weather = new Weather();
 
+
+        //We get the data from the Openweathermap databese and parse it with JSON into the weather array
         try {
             JSONObject jsonObject = new JSONObject(data);
 
@@ -31,7 +33,6 @@ public class JSONp {
 
 
             JSONObject cloudOBj = Utilities.getObject("clouds", jsonObject);
-            //sys
 
             JSONObject sysOBj = Utilities.getObject("sys", jsonObject);
             place.setCountry(Utilities.getString("country", sysOBj));
